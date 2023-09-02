@@ -1,0 +1,39 @@
+.nav {
+    display: flex;
+    gap: 20px;
+    justify-content: space-evenly;
+    list-style: none;
+    padding-top:10px;
+  }
+  
+  .navbar .hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+  
+  .hamburger-icon .line {
+    width: 50%;
+    height: 2px;
+    background-color: #000;
+    margin-bottom: 6px;
+  }
+  
+  /* Styles for the open state of the hamburger menu */
+  .hamburger-icon.open .line:first-child {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .hamburger-icon.open .line:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger-icon.open .line:last-child {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  

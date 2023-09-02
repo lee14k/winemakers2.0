@@ -1,0 +1,30 @@
+.banner {
+  height: 800px;
+  background-image: linear-gradient(
+      356deg,
+      rgba(255,255, 255, 0.7) 0%,
+      rgba(255, 255, 255, 1) 100%
+    ),
+    url("/winebanner.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.join {
+  border: solid white;
+  border-radius: 15px;
+  height: 150px;
+  width: 270px;
+  font-size: 30px;
+  margin-bottom: 50px;
+  color: white;
+  background-color: transparent;
+  -webkit-box-shadow: 17px 17px 19px 3px rgba(166, 19, 84, 1);
+  -moz-box-shadow: 17px 17px 19px 3px rgba(166, 19, 84, 1);
+  box-shadow: 17px 17px 19px 3px rgba(166, 19, 84, 1);
+  padding: 10px;
+}
