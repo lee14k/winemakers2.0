@@ -6,19 +6,19 @@ export default function Middsex() {
           <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Welcome</h2>
             <p className="mt-6 text-xl leading-8 text-gray-600">
-              Quasi est quaerat. Sit molestiae et. Provident ad dolorem occaecati eos iste. Soluta rerum quidem minus ut
-              molestiae velit error quod. Excepturi quidem expedita molestias quas.
+         The Wisconsin Vintners Association is an educational organization that focuses on teaching its members the fundamentals of winemaking. Organized in 1970, a wide range of members from beginners to award winning experts, join together to share their knowledge and experience.
+
+
             </p>
             <p className="mt-6 text-base leading-7 text-gray-600">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-              fugiat veniam occaecat fugiat. Quasi aperiam sit non sit neque reprehenderit.
+          During the ensuing decades, the WVA has focused on teaching our members the fundamentals of wine making, and in doing so, we have endeavored to make our association a truly social club that welcomes anyone interested in wine and wine making.
             </p>
             <div className="mt-10 flex">
               <a
-                href="#"
+                href="/About"
                 className="rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
               >
-               Join  <span aria-hidden="true">&rarr;</span>
+               Learn More  <span aria-hidden="true">&rarr;</span>
               </a>
             </div>
           </div>

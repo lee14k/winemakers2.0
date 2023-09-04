@@ -1,20 +1,32 @@
+// Homeevents.js
+import { useEffect, useState } from 'react';
 import Event from "../Components/Event";
-import data from "../Components/eventdata.json";
 
 export default function Homeevents() {
+const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/events')
+      .then(response => response.json())
+      .then(data => setEvents(data))
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
+console.log("Events data: ", events);
+
   return (
+    
     <div className="homewrapper">
       <h2 className="upcoming">Upcoming Events</h2>
-      {data.map((item, index) => {
+      {events.map((event, index) => {
         return (
           <Event
             key={index}
-            month={item.month}
-            day={item.day}
-            time={item.time}
-            header={item.header}
-            description={item.description}
-            price={item.price}
+            month={event.month}
+            day={event.day}
+            time={event.time}
+            header={event.title.rendered}
+            description={event.description}
+            price={event.price}
           />
         );
       })}

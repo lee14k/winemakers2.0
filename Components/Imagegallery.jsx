@@ -1,5 +1,4 @@
 'use client'
-import "./Imagegallery.css";
 import React, { useState } from "react";
 function Imagegallery() {
   const [isModalOpen, setModalOpen] = useState(false);

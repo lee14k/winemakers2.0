@@ -1,5 +1,6 @@
 'use client'
 import Image from 'next/image'
+import Link from 'next/link'
 export default function Headbanner () {
     return (
         <div className="banner">
@@ -8,7 +9,9 @@ export default function Headbanner () {
                 width={700}
                 height={700}
             />
-            <button className='join'>Learn More</button>
+            <Link href="kaileehamre.com/product/new-annual-membership">
+            <button className='join'>Join Us Now!</button>
+            </Link>
         </div>
     )
 }
