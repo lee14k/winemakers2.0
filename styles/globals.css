@@ -73,13 +73,7 @@
   flex-direction: column;
   align-items: center;
 }
-.nav {
-    display: flex;
-    gap: 20px;
-    justify-content: space-evenly;
-    list-style: none;
-    padding-top:10px;
-  }
+
   
   .navbar .hamburger-icon {
     display: flex;
@@ -129,11 +123,10 @@
 }
 
 .join {
-  border: solid white;
   border-radius: 15px;
   height: 150px;
-  width: 270px;
-  font-size: 30px;
+  width: 370px;
+  font-size: 32px;
   margin-bottom: 50px;
   color: black;
   -webkit-box-shadow: 17px 17px 19px 3px rgba(166, 19, 84, 1);
