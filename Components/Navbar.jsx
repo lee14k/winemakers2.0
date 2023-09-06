@@ -1,6 +1,7 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { useUser } from '@auth0/nextjs-auth0/client';
 
 const navigation = [
   { name: "Home", href: "/", current: true },
@@ -11,12 +12,41 @@ const navigation = [
     { name: 'Events', href: '/Events', current: false },
 
 ];
-
+ 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Navbar() {
+ const { user, loading } = useUser();  // Make sure you've invoked useUser() correctly
+  const [navigation, setNavigation] = useState(
+[
+  { name: "Home", href: "/", current: true },
+  { name: "About", href: "/About", current: false },
+  { name: "Login", href: "/Login", current: false },
+  { name: "Gallery", href: "/Gallery", current: false },
+  { name: "Contact", href: "/Contact", current: false },
+    { name: 'Events', href: '/Events', current: false },
+
+  ]);
+
+   useEffect(() => {
+
+    // Update navigation array based on user's state
+    if (!loading) {
+      setNavigation((prevNavigation) => {
+        const newNavigation = [...prevNavigation];  // Create a copy of the existing navigation array
+        if (user) {
+          // If user is logged in, add the Members page and remove the Login page
+          newNavigation.splice(2, 1, { name: "Members", href: "/Members", current: false });
+        } else {
+          // If user is logged out, add the Login page and remove the Members page
+          newNavigation.splice(2, 1, { name: "Login", href: "/api/auth/login", current: false });
+        }
+        return newNavigation;
+      });
+    }
+  }, [user, loading]);
   return (
     <Disclosure as="nav" className>
       {({ open }) => (
