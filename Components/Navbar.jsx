@@ -10,6 +10,7 @@ const navigation = [
   { name: "Gallery", href: "/Gallery", current: false },
   { name: "Contact", href: "/Contact", current: false },
     { name: 'Events', href: '/Events', current: false },
+    {name:'Resources', href:'/Resources', current:false}
 
 ];
  
@@ -27,6 +28,8 @@ export default function Navbar() {
   { name: "Gallery", href: "/Gallery", current: false },
   { name: "Contact", href: "/Contact", current: false },
     { name: 'Events', href: '/Events', current: false },
+        { name: 'Resources', href: '/Resources', current: false },
+
 
   ]);
 

@@ -1,4 +1,3 @@
-
 export default function Event({ month, day, time, header, description, price }) {
   return (
     <div className="eventwrapper">
@@ -15,10 +14,12 @@ export default function Event({ month, day, time, header, description, price }) 
         <span>{description}</span>
       </div>
 
-      <div className="pricediv">
-        <h4>{price}</h4>
-        <span>per person</span>
-      </div>
+      {price && (
+        <div className="pricediv">
+          <h4>{price}</h4>
+          <span>per person</span>
+        </div>
+      )}
     </div>
   );
 }

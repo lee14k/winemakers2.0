@@ -1,20 +1,21 @@
-// Homeevents.js
 import { useEffect, useState } from 'react';
 import Event from "../Components/Event";
 
 export default function Homeevents() {
-const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState([]);
 
   useEffect(() => {
     fetch('/api/events')
       .then(response => response.json())
-      .then(data => setEvents(data))
+      .then(data => {
+        // Here's the change: we slice the array to get only the first 3 events.
+        setEvents(data.slice(0, 3))
+      })
       .catch(error => console.error('Error fetching data:', error));
   }, []);
-console.log("Events data: ", events);
+  console.log("Events data: ", events);
 
   return (
-    
     <div className="homewrapper">
       <h2 className="upcoming">Upcoming Events</h2>
       {events.map((event, index) => {

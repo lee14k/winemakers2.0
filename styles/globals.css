@@ -112,12 +112,12 @@
       rgba(255,255, 255, 0.7) 0%,
       rgba(255, 255, 255, 0.7) 100%
     ),
-    url("/winebanner.png");
+    url("/winemountain.png");
   background-size: cover;
   background-position: center;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   margin-top:10px;
 }
@@ -125,7 +125,7 @@
 .join {
   background-color:white !important ;
   border-radius: 15px;
-  height: 150px;
+  height: 100px;
   width: 370px;
   font-size: 32px;
   margin-bottom: 50px;
@@ -134,6 +134,7 @@
   -moz-box-shadow: 17px 17px 19px 3px rgba(166, 19, 84, 1);
   box-shadow: 17px 17px 19px 3px rgba(166, 19, 84, 1);
   padding: 10px;
+  margin-top:10px;
 }
 *,
 *::after,
