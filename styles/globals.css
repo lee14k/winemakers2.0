@@ -123,6 +123,7 @@
 }
 
 .join {
+  background-color:white !important ;
   border-radius: 15px;
   height: 150px;
   width: 370px;
