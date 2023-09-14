@@ -4,6 +4,7 @@ import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Navbar from "Components/Navbar"
 import Footer from 'Components/Footer'
+import Contact from 'Components/Contact'
 const stats = [
   { value: '283 Members' },
   { value: '53 Years' }
@@ -307,6 +308,7 @@ export default function Example() {
           />
         </div>
 
+
         {/* Values section */}
        
 
@@ -319,6 +321,7 @@ export default function Example() {
       </main>
 
       {/* Footer */}
+      <Contact/>
       <footer className="mx-auto max-w-7xl overflow-hidden pb-20 sm:pb-24 lg:px-8">
        <Footer/>
       </footer>

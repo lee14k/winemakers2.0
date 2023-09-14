@@ -8,7 +8,6 @@ const navigation = [
   { name: "About", href: "/About", current: false },
   { name: "Login", href: "/Login", current: false },
   { name: "Gallery", href: "/Gallery", current: false },
-  { name: "Contact", href: "/Contact", current: false },
     { name: 'Events', href: '/Events', current: false },
     {name:'Resources', href:'/Resources', current:false}
 
@@ -26,7 +25,6 @@ export default function Navbar() {
   { name: "About", href: "/About", current: false },
   { name: "Login", href: "/Login", current: false },
   { name: "Gallery", href: "/Gallery", current: false },
-  { name: "Contact", href: "/Contact", current: false },
     { name: 'Events', href: '/Events', current: false },
         { name: 'Resources', href: '/Resources', current: false },
 
