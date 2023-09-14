@@ -14,9 +14,7 @@ export default function Headbanner () {
             height={300}
             width={300}
             />
-         <h1 className="text-8xl">
-            Wisconsin Vintners Association
-         </h1>
+       
             <button onClick={handleButtonClick} className='join'>Join Us Now!</button>
         </div>
     )
