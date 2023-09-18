@@ -1,16 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import firebase from 'firebase/app';
-import 'firebase/firestore';
+import { useState, useEffect } from 'react';
+import { initializeApp, getApps, getApp } from 'firebase/app';
+import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAbVNAxcjwqyFybOLMfEcgWjLXlGqSCt-k",
+  authDomain: "vintnerspress.firebaseapp.com",
+  projectId: "vintnerspress",
+  storageBucket: "vintnerspress.appspot.com",
+  messagingSenderId: "342226771832",
+  appId: "1:342226771832:web:37a400886bf7f6be87f28d",
+  measurementId: "G-RFCVYWND7T"
+};
 
 // Initialize Firebase (do this only once in your app)
-if (!firebase.apps.length) {
-  const firebaseConfig = {
-    // your firebase config
-  };
-  firebase.initializeApp(firebaseConfig);
+let app;
+if (!getApps().length) {
+    app = initializeApp(firebaseConfig);
+} else {
+    app = getApp();
 }
 
-const db = firebase.firestore();
+const db = getFirestore(app);
 
 const PDFDropdown = () => {
   const [dates, setDates] = useState([]);
@@ -20,7 +30,8 @@ const PDFDropdown = () => {
   useEffect(() => {
     async function fetchDates() {
       let datesArray = [];
-      const snapshot = await db.collection('pdfs').get();
+      const q = query(collection(db, 'pdfs'));
+      const snapshot = await getDocs(q);
       snapshot.forEach(doc => {
         const date = doc.data().date;
         if (!datesArray.includes(date)) {
@@ -34,7 +45,8 @@ const PDFDropdown = () => {
 
   const handleDateChange = async (e) => {
     setSelectedDate(e.target.value);
-    const snapshot = await db.collection('pdfs').where('date', '==', e.target.value).get();
+    const q = query(collection(db, 'pdfs'), where('date', '==', e.target.value));
+    const snapshot = await getDocs(q);
     if (!snapshot.empty) {
       const url = snapshot.docs[0].data().url;
       setPdfUrl(url);
