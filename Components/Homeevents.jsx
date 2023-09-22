@@ -17,13 +17,12 @@ export default function Homeevents() {
 
   return (
     <div className="homewrapper">
-      <h2 className="upcoming">Upcoming Events</h2>
+      <h2 className="flex justify-center items-center text-4xl" >Upcoming Events</h2>
       {events.map((event, index) => {
         return (
           <Event
             key={index}
-            month={event.month}
-            day={event.day}
+        date={event.date}
             time={event.time}
             header={event.title.rendered}
             description={event.description}

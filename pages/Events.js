@@ -24,8 +24,7 @@ console.log("Events data: ", events);
         return (
           <Event
             key={index}
-            month={event.month}
-            day={event.day}
+          date={event.date}
             time={event.time}
             header={event.title.rendered}
             description={event.description}
@@ -33,6 +32,7 @@ console.log("Events data: ", events);
           />
         );
       })}
+      <Footer/>
     </div>
   );
 }

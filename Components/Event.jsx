@@ -1,25 +1,23 @@
-export default function Event({ month, day, time, header, description, price }) {
+export default function Event({ date, time, header, description, price }) {
   return (
-    <div className="eventwrapper">
-      <div className="datetime">
-        <div className="month-day">
-          <span className="month">{month}</span>
-          <span className="day">{day}</span>
-        </div>
-        <span className="time">{time}</span>
+    <div className="">
+    <div className="grid grid-cols-3 gap-4 items-start mt-20">
+      <div>
+        <div>{date}</div>
+        <div>{time}</div>
       </div>
-
-      <div className="headdesc">
+      <div className="">
         <h3>{header}</h3>
-        <span>{description}</span>
+        <p>{description}</p>
       </div>
-
-      {price && (
-        <div className="pricediv">
-          <h4>{price}</h4>
-          <span>per person</span>
-        </div>
-      )}
+      <div>
+        {price && <span>{price}</span>}
+      </div>
+    </div>
     </div>
   );
 }
+
+
+
+
