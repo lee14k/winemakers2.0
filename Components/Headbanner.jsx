@@ -13,6 +13,7 @@ export default function Headbanner () {
             src="/WVAlogo.png"
             height={300}
             width={300}
+            className="my-20"
             />
        
             <button onClick={handleButtonClick} className='join'>Join Us Now!</button>

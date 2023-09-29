@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import Event from "../Components/Event";
 import Navbar from '@/Components/Navbar';
 import Footer from '@/Components/Footer';
+import Eventspageevent from '@/Components/Eventspagevent';
 
 export default function Homeevents() {
 const [events, setEvents] = useState([]);
@@ -20,9 +21,10 @@ console.log("Events data: ", events);
     <div>
         <Navbar/>
       <h2 className="upcoming">Upcoming Events</h2>
+             <div className="events-grid grid grid-cols-3">
       {events.map((event, index) => {
         return (
-          <Event
+          <Eventspageevent
             key={index}
           date={event.date}
             time={event.time}
@@ -32,6 +34,7 @@ console.log("Events data: ", events);
           />
         );
       })}
+      </div>
       <Footer/>
     </div>
   );
