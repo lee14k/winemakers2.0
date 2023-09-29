@@ -5,6 +5,8 @@ import { useUser } from '@auth0/nextjs-auth0/client';
 import { useRouter } from 'next/router';
 import PDFDropdown from "@/Components/PDFDropdown";
 
+import Membershome from "@/Components/Membershome";
+
 const Members = () => {
   const [view, setView] = useState(''); // 'keyword', 'date', or ''
   const { user, loading } = useUser();
@@ -22,17 +24,22 @@ const Members = () => {
   if (!user) return null;
 
   return (
-    <div>
+    <div className="">
       <Navbar />
-      <h1>Welcome to Members Only Page</h1>
-      <p>Hello, {user.name}!</p>
+      <p className="mt-10">Hello, {user.name}!</p>
+      <h1>PDF Library</h1>
       <h2>Search by keyword or date</h2>
 
-      <button onClick={handleKeywordClick}>Keyword</button>
-      <button onClick={handleDateClick}>Date</button>
+<div className="">
+      <button onClick={handleKeywordClick} className="rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 mx-10">Keyword</button>
+      <button onClick={handleDateClick} className="rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">Date</button>
 
       {view === 'keyword' && <Search />}
       {view === 'date' && <PDFDropdown />}
+      </div>
+
+      <button className="mt-20 rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">YouTube Recordings</button>
+
     </div>
   );
 };

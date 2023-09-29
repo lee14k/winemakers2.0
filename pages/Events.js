@@ -21,7 +21,7 @@ console.log("Events data: ", events);
     <div>
         <Navbar/>
       <h2 className="upcoming">Upcoming Events</h2>
-             <div className="events-grid grid grid-cols-3">
+             <div className="events-grid grid grid-cols-3 gap-10">
       {events.map((event, index) => {
         return (
           <Eventspageevent
