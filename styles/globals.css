@@ -278,42 +278,72 @@ body {
     cursor: pointer;
 }
 
-/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-.flip-card {
-  perspective: 1000px;
+.gridwrapper {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  margin-top: 10px;
 }
 
-.flip-card-inner {
+.griditem {
+  background-color: #b2bb91;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  border-radius:25px;
+  justify-content:space-evenly;
+  margin-left:10px;
+  margin-right:10px;
+  align-items:center;
+}
+
+/* Grid layout */
+.gridwrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.griditem {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 8px;
+  perspective: 1000px; /* Create 3D effect */
   position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
 }
 
-.flip-card-front, .flip-card-back {
+/* Flip Card Effect */
+.griditem .gridhead,
+.griditem .gridbutton {
+  z-index: 1;
+  position: relative;
+}
+
+.griditem .back {
   position: absolute;
-  width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
-  backface-visibility: hidden;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  backface-visibility: hidden; /* Hide the back side of the card */
+  transform: rotateY(180deg); /* Rotate the back side of the card out of view */
+  transition: opacity 0.5s, transform 0.5s;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  border-radius: 8px;
 }
 
-.flip-card-front {
-  background-color: #bbb;
-  color: black;
-  z-index: 2; /* To make sure it stays on top initially */
+.griditem.flip .back {
+  opacity: 1;
+  transform: rotateY(0deg);
 }
 
-.flip-card-back {
-  background-color: red;
-  color: white;
-  transform: rotateY(180deg); /* Starts flipped */
-}
-
-/* Handle the flipping effect */
-.flip-card.flipped .flip-card-inner {
-  transform: rotateY(180deg); /* Flips the container, showing the back */
+.griditem.flip .gridhead,
+.griditem.flip .gridbutton {
+  opacity: 0;
 }

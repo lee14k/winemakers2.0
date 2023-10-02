@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Eventspageevent from "./Eventspagevent";
+
 export default function Eventsgrid({ events }) {
   const [flipStates, setFlipStates] = useState(
     new Array(events.length).fill(false)
@@ -11,7 +12,9 @@ export default function Eventsgrid({ events }) {
     setFlipStates(newFlipStates);
   };
 
+
   return (
+    
     <div className="gridwrapper front">
       {events.map((event, index) => (
         <div
@@ -26,18 +29,19 @@ export default function Eventsgrid({ events }) {
             backgroundPosition: "center",
           }}
         >
-          <h2 className="gridhead">{event.title}</h2>
-          {console.log(event.title)}{" "}
+          <h2 className="gridhead">{event.title.rendered}</h2>
+                        {console.log(event.title.rendered)}
+
           <div className="back" onClick={() => handleFlip(index)}>
-            {event.description}
+            {event.description.rendered}
           </div>
           {/* Render the Eventspageevent component here */}
           <Eventspageevent
             date={event.date}
             time={event.time}
-            header={event.title.rendered} // You can use the rendered title directly if needed
-            description={event.description}
-            price={event.price}
+            header={event.title.rendered}
+            description={event.description.rendered}
+            price={event.price.rendered}
           />
         </div>
       ))}
