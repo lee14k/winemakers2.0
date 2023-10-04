@@ -23,7 +23,7 @@ export default function Eventsgrid({ events }) {
           key={index}
           style={{
             backgroundImage: `url(${
-              event.img || "default_image_path_here.jpg"
+              event.img 
             })`,
             backgroundSize: "cover",
             backgroundPosition: "center",

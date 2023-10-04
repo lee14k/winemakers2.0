@@ -16,8 +16,8 @@ export default function Events() {
   return (
     <div>
       <Navbar />
-      <h2 className="upcoming">Upcoming Events</h2>
-      
+      <h2 className="text-6xl flex justify-center ">Events</h2>
+      <p>Click each card to flip and learn more</p>
       <Eventsgrid events={events} /> {/* Pass the events data to the Eventsgrid component */}
       <Footer />
     </div>

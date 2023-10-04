@@ -7,8 +7,8 @@ export default function Event({ date, time, header, description, price }) {
         <div>{time}</div>
       </div>
       <div className="">
-        <h3>{header}</h3>
-        <p>{description}</p>
+        <h3 className="homeeventhead text-4xl">{header}</h3>
+        <p className="text-xl">{description}</p>
       </div>
       <div>
         {price && <span>{price}</span>}

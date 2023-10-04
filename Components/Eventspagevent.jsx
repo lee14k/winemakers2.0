@@ -18,7 +18,7 @@ export default function Eventspageevent({ date, time, header, description, price
           <div>{time}</div>
         </div>
         <div className="">
-          <h3>{header}</h3>
+          <h3 className="eventpagehead text-2xl text-white">{header}</h3>
           <p>{description}</p>
         </div>
         <div>

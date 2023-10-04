@@ -9,15 +9,14 @@ const searchClient = algoliasearch('ZNVM513MG7', '490f9acd2e46f97227da3e1b2c3ad6
 function Hit(props) {
   return (
     <div>
-      <span>
+      <a href={props.hit.url} target="_blank" rel="noopener noreferrer">
         <Highlight attribute="name" hit={props.hit} />
-      </span>
-      <span>
-        {props.hit.extractedDate}
-      </span>
+      </a>
+    
     </div>
   );
 }
+
 
 function Search() {
   return (

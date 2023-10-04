@@ -17,7 +17,7 @@ export default function Homeevents() {
 
   return (
     <div className="homewrapper">
-      <h2 className="flex justify-center items-center text-4xl" >Upcoming Events</h2>
+      <h2 className="upcoming flex justify-center items-center text-6xl" >Upcoming Events</h2>
       {events.map((event, index) => {
         return (
           <Event
