@@ -4,11 +4,11 @@ import { useState, useEffect } from "react";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { useRouter } from "next/router";
 import PDFDropdown from "@/Components/PDFDropdown";
-
 import Membershome from "@/Components/Membershome";
-
+import Newsletter from "@/Components/Newsletter";
+import PDFUpload from "@/Components/PDFupload";
 const Members = () => {
-  const [view, setView] = useState(""); // 'keyword', 'date', or ''
+  const [view, setView] = useState("");
   const { user, loading } = useUser();
   const router = useRouter();
 
@@ -18,6 +18,13 @@ const Members = () => {
 
   const handleDateClick = () => {
     setView("date");
+  };
+
+  const handlePDFClick = () => {
+    setView("upload");
+  };
+  const handleNewsClick = () => {
+    setView("upload");
   };
 
   if (loading) return <p>Loading...</p>;
@@ -37,33 +44,53 @@ const Members = () => {
       <div className="">
         <ul className="flex gap-20">
           <li>
-        <button
-          onClick={handleKeywordClick}
-          className="rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 "
-        >
-          Keyword
-        </button>
-        </li>
-        <li>
-        <button
-          onClick={handleDateClick}
-          className="rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
-        >
-          Date
-        </button>
-        </li>
-</ul>
+            <button
+              onClick={handleKeywordClick}
+              className="rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 "
+            >
+              Keyword
+            </button>
+          </li>
+
+          <li>
+            <button
+              onClick={handleDateClick}
+              className="rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
+            >
+              Date
+            </button>
+          </li>
+
+          <li>
+            <button
+              onClick={handleUploadClick}
+              className="rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 "
+            >
+              Upload Vintners Press
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={handleUploadClick}
+              className="rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 "
+            >
+              Upload another PDF
+            </button>
+          </li>
+        </ul>
         {view === "keyword" && <Search />}
         {view === "date" && <PDFDropdown />}
+        {view === "newsletter" && <Newsletter />}
+        {view === "PDF" && <PDFUpload />}
       </div>
 
-<div className="flex flex-col">
-      <button className="mt-20 rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">
-        YouTube Recordings
-      </button>
-      <button className="mt-20 rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">
-        Recipes
-      </button>
+      <div className="flex flex-col">
+        <button className="mt-20 rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">
+          YouTube Recordings
+        </button>
+        <button className="mt-20 rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">
+          Recipes
+        </button>
       </div>
     </div>
   );
