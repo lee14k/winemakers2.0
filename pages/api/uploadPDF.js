@@ -6,13 +6,13 @@ import pdfParse from 'pdf-parse';
 
 // Initialize Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyAbVNAxcjwqyFybOLMfEcgWjLXlGqSCt-k",
-  authDomain: "vintnerspress.firebaseapp.com",
-  projectId: "vintnerspress",
-  storageBucket: "vintnerspress.appspot.com",
-  messagingSenderId: "342226771832",
-  appId: "1:342226771832:web:37a400886bf7f6be87f28d",
-  measurementId: "G-RFCVYWND7T"
+apiKey: process.env.API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
+  projectId: process.env.PROJECT_ID,
+  storageBucket: process.env.STORAGE_BUCKET,
+  messagingSenderId: process.env.MESSAGING_SENDER_ID,
+  appId: process.env.APP_ID,
+  measurementId: process.env.MEASUREMENT_ID
 };
 
 let app;
