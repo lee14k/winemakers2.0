@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import PDFDropdown from "@/Components/PDFDropdown";
 import Membershome from "@/Components/Membershome";
 import Newsletter from "@/Components/Newsletter";
-import PDFUpload from "@/Components/PDFupload";
+import PDFUpload from "@/Components/PDFUpload";
 const Members = () => {
   const [view, setView] = useState("");
   const { user, loading } = useUser();
@@ -21,10 +21,10 @@ const Members = () => {
   };
 
   const handlePDFClick = () => {
-    setView("upload");
+    setView("PDF");
   };
   const handleNewsClick = () => {
-    setView("upload");
+    setView("newsletter");
   };
 
   if (loading) return <p>Loading...</p>;
