@@ -55,7 +55,7 @@ export default async (req, res) => {
       // Store metadata in Firestore
       await addDoc(collection(db, 'pdfs'), {
         name: file.originalFilename,
-        url: downloadURL,
+url: this.routeUrl + ".json",
         text: data.text
       });
 
