@@ -380,3 +380,11 @@ body {
   border-radius: 50%;
   animation: spinner 1.5s linear infinite;
 }
+
+@media screen and (max-width: 1000px) {
+.gridwrapper {
+      grid-template-columns: repeat(1, 1fr);
+
+}
+
+}
