@@ -29,17 +29,24 @@ export default function Eventsgrid({ events }) {
             backgroundPosition: "center",
           }}
         >
-          <h2 className="gridhead">{event.title.rendered}</h2>
-                        {console.log(event.title.rendered)}
+          <h2 className="gridhead"> <Eventspageevent
+         
+            header={event.title.rendered}
+       
+          />  </h2>
 
           <div className="back" onClick={() => handleFlip(index)}>
-            {event.description.rendered}
-          </div>
+ <Eventspageevent
+            date={event.date}
+            time={event.time}
+            header={event.title.rendered}
+            description={event.description.rendered}
+            price={event.price.rendered}
+          />          </div>
           {/* Render the Eventspageevent component here */}
           <Eventspageevent
             date={event.date}
             time={event.time}
-            header={event.title.rendered}
             description={event.description.rendered}
             price={event.price.rendered}
           />
