@@ -4,12 +4,12 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useUser } from '@auth0/nextjs-auth0/client';
 
 const navigation = [
-  { name: "Home", href: "/", current: true },
-  { name: "About", href: "/About", current: false },
-  { name: "Login", href: "/Login", current: false },
-  { name: "Gallery", href: "/Gallery", current: false },
-    { name: 'Events', href: '/Events', current: false },
-    {name:'Resources', href:'/Resources', current:false}
+  { name: "Home", href: "/", current: 'true' },
+  { name: "About", href: "/About", current: 'false '},
+  { name: "Login", href: "/Login", current: 'false' },
+  { name: "Gallery", href: "/Gallery", current: 'false' },
+    { name: 'Events', href: '/Events', current: 'false' },
+    {name:'Resources', href:'/Resources', current:'false'}
 
 ];
  
