@@ -242,7 +242,7 @@ body {
 }
 
 .modal {
-    display: block;
+    display: flex;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -257,8 +257,7 @@ body {
 .modal-content {
     margin: 15% auto;
     display: block;
-    width: 80%;
-    max-width: 700px;
+    width: auto;
 }
 
 .close {

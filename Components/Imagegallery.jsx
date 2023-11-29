@@ -8,14 +8,14 @@ function classNames(...classes) {
 
 function Imagegallery() {
   const [isModalOpen, setModalOpen] = useState(false);
-  const [currentImage, setCurrentImage] = useState('');
+  const [currentImageIndex, setCurrentImageIndex] = useState(null); // Initialize as null
   const [categorizedMedia, setCategorizedMedia] = useState({});
   const [activeTab, setActiveTab] = useState('');
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
-      setIsLoading(true);  // Start loading
+      setIsLoading(true);
       try {
         const response = await axios.get('/api/images');
         setCategorizedMedia(response.data);
@@ -23,31 +23,44 @@ function Imagegallery() {
       } catch (error) {
         console.error("Error fetching images:", error);
       }
-      setIsLoading(false);  // End loading
+      setIsLoading(false);
     };
 
     fetchData();
   }, []);
 
-  const handleOpenModal = (image) => {
-    setCurrentImage(image);
+  const handleOpenModal = (index) => {
+    setCurrentImageIndex(index);
     setModalOpen(true);
   };
 
+  const handleNextImage = () => {
+    setCurrentImageIndex(prevIndex => prevIndex < categorizedMedia[activeTab].length - 1 ? prevIndex + 1 : prevIndex);
+  };
+
+  const handlePreviousImage = () => {
+    setCurrentImageIndex(prevIndex => prevIndex > 0 ? prevIndex - 1 : prevIndex);
+  };
+
   const handleCloseModal = () => {
-    setCurrentImage('');
     setModalOpen(false);
+    setCurrentImageIndex(null); // Reset to null
   };
 
   if (isLoading) {
     return <LoadingSpinner />;
   }
 
+  // Ensure activeTab and categorizedMedia are correctly set
+  if (!activeTab || !categorizedMedia[activeTab]) {
+    return null;
+  }
+
+  const activeImages = categorizedMedia[activeTab];
+
   return (
     <div className="gallerycontainer">
       <div className="container">
-        
-        {/* Tabs */}
         <div className="hidden sm:block">
           <div className="border-b border-gray-200">
             <nav className="-mb-px flex" aria-label="Tabs">
@@ -69,33 +82,39 @@ function Imagegallery() {
           </div>
         </div>
 
-        {/* Image Gallery */}
         {Object.keys(categorizedMedia).map((folderName) => (
           folderName === activeTab && (
             <div key={folderName} className="gallery">
-              {categorizedMedia[folderName].map((item) => (
+              {categorizedMedia[folderName].map((item, index) => (
                 <figure key={item.id} className={`gallery__item gallery__item--${item.id}`}>
                   <img
                     src={item.source_url}
                     alt={item.alt_text}
                     className="gallery__img"
-                    onClick={() => handleOpenModal(item.source_url)}
+                    onClick={() => handleOpenModal(index)}
                   />
                 </figure>
               ))}
             </div>
           )
         ))}
-
       </div>
 
-      {/* Modal */}
-      {isModalOpen && (
-        <div className="modal">
-          <span className="close" onClick={handleCloseModal}>
-            &times;
-          </span>
-          <img className="modal-content" src={currentImage} alt="modal" />
+      {isModalOpen && currentImageIndex !== null && (
+        <div className="modal ">
+          <span className="close" onClick={handleCloseModal}>&times;</span>
+            {currentImageIndex > 0 && (
+            <button onClick={handlePreviousImage} className="modal-prev text-xl text-white">Previous</button>
+          )}
+          <img 
+            className="modal-content " 
+            src={activeImages[currentImageIndex]?.source_url} // Use optional chaining
+            alt="modal" 
+          />
+        
+          {currentImageIndex < categorizedMedia[activeTab].length - 1 && (
+            <button onClick={handleNextImage} className="modal-next text-xl text-white">Next</button>
+          )}
         </div>
       )}
     </div>
