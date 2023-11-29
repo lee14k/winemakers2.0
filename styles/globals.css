@@ -153,14 +153,13 @@ body {
 }
 
 .container {
-    width: 60%;
     margin: 2rem auto;
 }
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 5vw);
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 8vw);
     grid-gap: 1.5rem;
 }
 
