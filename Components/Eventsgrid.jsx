@@ -37,7 +37,6 @@ export default function Eventsgrid({ events }) {
 
           <div className="back" onClick={() => handleFlip(index)}>
  <Eventspageevent
-            date={event.date}
             time={event.time}
             header={event.title.rendered}
             description={event.description.rendered}

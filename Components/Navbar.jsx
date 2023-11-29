@@ -2,6 +2,7 @@ import { Fragment, useEffect, useState } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useUser } from '@auth0/nextjs-auth0/client';
+import { useRouter } from 'next/router'; // Import useRouter
 
 const navigation = [
   { name: "Home", href: "/", current: 'true' },
@@ -9,7 +10,8 @@ const navigation = [
   { name: "Login", href: "/Login", current: 'false' },
   { name: "Gallery", href: "/Gallery", current: 'false' },
     { name: 'Events', href: '/Events', current: 'false' },
-    {name:'Resources', href:'/Resources', current:'false'}
+    {name:'Resources', href:'/Resources', current:'false'},
+        { name: 'Dinner Dance', href: '/DinnerDance', current: false },
 
 ];
  
@@ -18,7 +20,9 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
- const { user, loading } = useUser();  // Make sure you've invoked useUser() correctly
+ const { user, loading } = useUser();
+   const router = useRouter(); // Use the useRouter hook
+  // Make sure you've invoked useUser() correctly
   const [navigation, setNavigation] = useState(
 [
   { name: "Home", href: "/", current: true },
@@ -27,9 +31,20 @@ export default function Navbar() {
   { name: "Gallery", href: "/Gallery", current: false },
     { name: 'Events', href: '/Events', current: false },
         { name: 'Resources', href: '/Resources', current: false },
+        { name: 'Dinner Dance', href: '/DinnerDance', current: false },
 
 
   ]);
+
+  useEffect(() => {
+    // Update the navigation state based on the current route
+    setNavigation((prevNavigation) => {
+      return prevNavigation.map((item) => ({
+        ...item,
+        current: router.pathname === item.href // Set current to true if the pathname matches
+      }));
+    });
+  })
 
    useEffect(() => {
 
@@ -48,6 +63,8 @@ export default function Navbar() {
       });
     }
   }, [user, loading]);
+
+  
   return (
     <Disclosure as="nav" className>
       {({ open }) => (
