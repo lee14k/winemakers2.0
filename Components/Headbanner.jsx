@@ -5,7 +5,7 @@ import Link from 'next/link'
 export default function Headbanner () {
 
   const handleButtonClick = () => {
-    window.location.href = "https://kaileehamre.com/product/new-annual-membership";
+    window.location.href = "https://wihomewinemakers.org/product/new-annual-membership/";
   };
     return (
         <div className="banner">
