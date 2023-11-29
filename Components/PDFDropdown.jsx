@@ -30,20 +30,26 @@ const [dates, setDates] = useState([]);
         const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 
-   useEffect(() => {
-        async function fetchDates() {
-            let yearsSet = new Set(); // Using a set to avoid duplicates
-            const snapshot = await getDocs(collection(db, 'pdfs'));
-            snapshot.forEach(doc => {
-                const dateParts = doc.data().extractedDate.split(" ");
+ useEffect(() => {
+    async function fetchDates() {
+        let yearsSet = new Set(); 
+        const snapshot = await getDocs(collection(db, 'pdfs'));
+        snapshot.forEach(doc => {
+            const extractedDate = doc.data().extractedDate;
+            if (typeof extractedDate === 'string') {
+                const dateParts = extractedDate.split(" ");
                 if (dateParts.length === 2) {
-                    yearsSet.add(dateParts[1]); // Assuming the year is the second part
+                    yearsSet.add(dateParts[1]); 
                 }
-            });
-            setDates([...yearsSet]); // Convert set back to an array
-        }
-        fetchDates();
-    }, []);
+            } else {
+                console.log('ExtractedDate is missing or not a string', doc.id);
+            }
+        });
+        setDates([...yearsSet]); 
+    }
+    fetchDates();
+}, []);
+
 
     const handleQuery = async () => {
         if (selectedMonth && selectedYear) {
