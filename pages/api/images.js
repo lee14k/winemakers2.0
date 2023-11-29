@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export default async function handler(req, res) {
   try {
-    const response = await axios.get('https://kaileehamre.com/wp-json/wp/v2/media?per_page=100&page=1');
+    const response = await axios.get('http://wihomewinemakers.org/wp-json/wp/v2/media?per_page=100&page=1');
     const mediaItems = response.data;
 
     const categorizedMedia = mediaItems.reduce((acc, item) => {
