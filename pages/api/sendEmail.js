@@ -16,8 +16,8 @@ export default async (req, res) => {
       pass: process.env.SMTP_PASSWORD,
     },
   });
-  const recipients = [process.env.RECIPIENT1, process.env.RECIPIENT2,process.env.RECIPIENT3].join(',');
-
+  const recipients = [process.env.RECIPIENT1, process.env.RECIPIENT2, process.env.RECIPIENT3].join(',');
+console.log(recipients)
   const mailData = {
     from: email,
     to:recipients,  // you can change this to where you want to receive the emails
