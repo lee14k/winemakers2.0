@@ -25,6 +25,7 @@
     "next": "13.4.19",
     "next-connect": "^1.0.0",
     "node-fetch": "^3.3.2",
+    "nodemailer": "^6.9.7",
     "pdf-parse": "^1.1.1",
     "pdfjs-dist": "^4.0.269",
     "postcss": "8.4.28",

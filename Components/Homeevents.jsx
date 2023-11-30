@@ -8,8 +8,8 @@ export default function Homeevents() {
     fetch('/api/events')
       .then(response => response.json())
       .then(data => {
-        // Here's the change: we slice the array to get only the first 3 events.
-        setEvents(data.slice(0, 3))
+        // Slice the array to get only the first 3 events and then reverse the order
+        setEvents(data.slice(0, 3).reverse());
       })
       .catch(error => console.error('Error fetching data:', error));
   }, []);
@@ -22,7 +22,7 @@ export default function Homeevents() {
         return (
           <Event
             key={index}
-        date={event.date}
+            date={event.date}
             time={event.time}
             header={event.title.rendered}
             description={event.description}

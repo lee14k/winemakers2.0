@@ -22,9 +22,6 @@ export default function Eventsgrid({ events }) {
           className={`griditem ${flipStates[index] ? "flip" : ""}`}
           key={index}
           style={{
-            backgroundImage: `url(${
-              event.img 
-            })`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -32,6 +29,10 @@ export default function Eventsgrid({ events }) {
           <h2 className="gridhead"> <Eventspageevent
          
             header={event.title.rendered}
+              date={event.date}
+            time={event.time}
+            description={event.description.rendered}
+            price={event.price.rendered}
        
           />  </h2>
 
@@ -42,13 +43,7 @@ export default function Eventsgrid({ events }) {
             description={event.description.rendered}
             price={event.price.rendered}
           />          </div>
-          {/* Render the Eventspageevent component here */}
-          <Eventspageevent
-            date={event.date}
-            time={event.time}
-            description={event.description.rendered}
-            price={event.price.rendered}
-          />
+     
         </div>
       ))}
     </div>

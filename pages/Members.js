@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import PDFDropdown from "@/Components/PDFDropdown";
 import PDFUpload from "@/Components/PDFUpload";
 import signInAnonymouslyIfUploader from "../Components/signInAnonymouslyIfUploader";
-
+import Dashboard from "@/Components/Dashboard";
 const Members = () => {
   const [view, setView] = useState("");
   const { user, loading } = useUser();

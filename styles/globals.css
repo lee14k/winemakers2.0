@@ -386,3 +386,7 @@ body {
 }
 
 }
+
+.griditem {
+  background-image: url('/sampleeventbg.png')
+}
