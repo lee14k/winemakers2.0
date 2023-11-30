@@ -67,7 +67,8 @@ export default function Contact() {
         <p className="mt-2 text-lg leading-8 text-gray-600">
 We would love to have you join us. If you have any questions, fill out the form below and someone will reach out to you.        </p>
       </div>
-      <form action="#" method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
+      <form         onSubmit={handleSubmit}
+ method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
             <label htmlFor="firstName" className="block text-sm font-semibold leading-6 text-gray-900">

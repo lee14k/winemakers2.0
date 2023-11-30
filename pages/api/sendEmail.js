@@ -16,10 +16,11 @@ export default async (req, res) => {
       pass: process.env.SMTP_PASSWORD,
     },
   });
+  const recipients = [process.env.RECIPIENT1, process.env.RECIPIENT2,process.env.RECIPIENT3].join(',');
 
   const mailData = {
     from: email,
-    to:process.env.SMTP_USER,  // you can change this to where you want to receive the emails
+    to:recipients,  // you can change this to where you want to receive the emails
     subject: 'New Contact Form Submission',
     text: `
       Name: ${firstName} ${lastName}
