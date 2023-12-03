@@ -38,11 +38,11 @@ import PDFDropdown from "@/Components/PDFDropdown";
 import PDFUpload from "@/Components/PDFUpload";
 import signInAnonymouslyIfUploader from "../Components/signInAnonymouslyIfUploader";
 import Dashboard from "@/Components/Dashboard";
+import Newsletter from "@/Components/Newsletter";
 const navigation = [
   { name: "Newsletters", icon: FolderIcon, view: "newsletters" },
-  { name: "PDFs",  icon: ServerIcon, view: "PDF" },
-  { name: "PDF Uploader", icon: SignalIcon, view: "pdfUploader" },
-  { name: "Membership Management",  icon: GlobeAltIcon, view: "membershipManagement" },
+  { name: "PDFs",  icon: ServerIcon, view: "date" },
+  { name: "PDF Uploader", icon: SignalIcon, view: "PDF" },
 ];
 
 function classNames(...classes) {
@@ -216,6 +216,7 @@ export default function Members() {
       {view === "keyword" && <Search />}
       {view === "date" && <PDFDropdown />}
       {view === "PDF" && isUploader && <PDFUpload />}
+      {view === "newsletters" && <Newsletter />}
 
     </div>
   );

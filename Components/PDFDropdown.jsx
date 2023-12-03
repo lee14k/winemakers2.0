@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { initializeApp, getApps, getApp } from 'firebase/app';
 import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
+import Table from './Table';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAbVNAxcjwqyFybOLMfEcgWjLXlGqSCt-k",
@@ -79,7 +80,7 @@ const [dates, setDates] = useState([]);
             </select>
 
             <button onClick={handleQuery}>Fetch PDF</button>
-
+            <Table db={db} collectionName="pdfs" />
             {pdfUrl && (
                 <div>
                     <a href={pdfUrl} target="_blank" rel="noopener noreferrer">Open PDF</a>
