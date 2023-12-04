@@ -213,11 +213,12 @@ export default function Members() {
           </div>
         </div>
       </div>
+      <div className="ml-48">
       {view === "keyword" && <Search />}
       {view === "date" && <PDFDropdown />}
       {view === "PDF" && isUploader && <PDFUpload />}
       {view === "newsletters" && <Newsletter />}
-
+</div>
     </div>
   );
 }

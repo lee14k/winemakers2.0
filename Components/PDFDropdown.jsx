@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { initializeApp, getApps, getApp } from 'firebase/app';
 import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
 import Table from './Table';
+import Search from './Search';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAbVNAxcjwqyFybOLMfEcgWjLXlGqSCt-k",
@@ -65,6 +66,7 @@ const [dates, setDates] = useState([]);
 
     return (
         <div>
+            <Search/>
             <select value={selectedMonth} onChange={(e) => setSelectedMonth(e.target.value)}>
                 <option value="" disabled>Select a month</option>
                 {months.map(month => (
