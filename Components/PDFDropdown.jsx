@@ -5,13 +5,13 @@ import Table from './Table';
 import Search from './Search';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAbVNAxcjwqyFybOLMfEcgWjLXlGqSCt-k",
-  authDomain: "vintnerspress.firebaseapp.com",
-  projectId: "vintnerspress",
-  storageBucket: "vintnerspress.appspot.com",
-  messagingSenderId: "342226771832",
-  appId: "1:342226771832:web:37a400886bf7f6be87f28d",
-  measurementId: "G-RFCVYWND7T"
+  apiKey: process.env.API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
+  projectId: process.env.PROJECT_ID,
+  storageBucket: process.env.STORAGE_BUCKET,
+  messagingSenderId: process.env.MESSAGING_SENDER_ID,
+  appId: process.env.APP_ID,
+  measurementId: process.env.MEASUREMENT_ID
 };
 
 // Initialize Firebase (do this only once in your app)
@@ -22,6 +22,7 @@ if (!getApps().length) {
     app = getApp();
 }
 
+
 const db = getFirestore(app);
 
 const PDFDropdown = () => {
@@ -30,7 +31,7 @@ const [dates, setDates] = useState([]);
     const [selectedYear, setSelectedYear] = useState('');
     const [pdfUrl, setPdfUrl] = useState('');
         const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
+    const [showTable, setShowTable] = useState(false); // State to control the visibility of the table
 
  useEffect(() => {
     async function fetchDates() {
@@ -51,6 +52,9 @@ const [dates, setDates] = useState([]);
     }
     fetchDates();
 }, []);
+   const toggleTableVisibility = () => {
+        setShowTable(!showTable); // Toggle the visibility
+    };
 
 
     const handleQuery = async () => {
@@ -66,8 +70,12 @@ const [dates, setDates] = useState([]);
 
     return (
         <div>
+        <div className="flex">
+                <button onClick={toggleTableVisibility}>
+                {showTable ? 'Hide Table' : 'Show All PDFs'}
+            </button>
             <Search/>
-            <select value={selectedMonth} onChange={(e) => setSelectedMonth(e.target.value)}>
+                 <select value={selectedMonth} onChange={(e) => setSelectedMonth(e.target.value)}>
                 <option value="" disabled>Select a month</option>
                 {months.map(month => (
                     <option key={month} value={month}>{month}</option>
@@ -80,9 +88,11 @@ const [dates, setDates] = useState([]);
                     <option key={year} value={year}>{year}</option>
                 ))}
             </select>
+          </div>
+       
 
             <button onClick={handleQuery}>Fetch PDF</button>
-            <Table db={db} collectionName="pdfs" />
+            {showTable && <Table db={db} collectionName="pdfs" />}
             {pdfUrl && (
                 <div>
                     <a href={pdfUrl} target="_blank" rel="noopener noreferrer">Open PDF</a>
