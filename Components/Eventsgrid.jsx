@@ -31,7 +31,6 @@ export default function Eventsgrid({ events }) {
             header={event.title.rendered}
               date={event.date}
             time={event.time}
-            description={event.description.rendered}
             price={event.price.rendered}
        
           />  </h2>
@@ -40,7 +39,7 @@ export default function Eventsgrid({ events }) {
  <Eventspageevent
             time={event.time}
             header={event.title.rendered}
-            description={event.description.rendered}
+            description={event.description}
             price={event.price.rendered}
           />          </div>
      
