@@ -33,12 +33,12 @@ import Navbar from "@/Components/Navbar";
 import { useEffect } from "react";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { useRouter } from "next/router";
-
+import PDFs from "@/Components/PDFs";
 import Dashboard from "@/Components/Dashboard";
 import Newsletters from "@/Components/Newsletters";
 const navigation = [
   { name: "Newsletters", icon: FolderIcon, view: "newsletters" },
-  { name: "PDFs",  icon: ServerIcon, view: "date" },
+  { name: "PDFs",  icon: ServerIcon, view: "PDFs" },
 ];
 
 function classNames(...classes) {
@@ -205,7 +205,7 @@ export default function Members() {
       </div>
       <div className="ml-48">
       {view === "keyword" && <Search />}
-      {view === "PDF" && <PDFUpload />}
+      {view === "PDFs" && <PDFs />}
       {view === "newsletters" && <Newsletters />}
 </div>
     </div>
