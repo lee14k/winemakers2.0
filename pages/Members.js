@@ -80,7 +80,6 @@ export default function Members() {
       <div className="">
         <div />
         <div>
-                <p className="mt-10">Hello, {user.name}!</p>
 
           <Transition.Root show={sidebarOpen} as={Fragment}>
             <Dialog
@@ -218,6 +217,8 @@ export default function Members() {
         </div>
       </div>
       <div className="ml-48">
+                        <p className="mt-10 mx-24">Hello, {user.name}!</p>
+
         {view === "PDFs" && <PDFs />}
         {view === "newsletters" && <Newsletters />}
         {view === "Vintners" && <Vintners />}
