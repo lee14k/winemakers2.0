@@ -29,20 +29,16 @@ import {
   ChevronUpDownIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/20/solid";
-import Search from "@/Components/Search";
 import Navbar from "@/Components/Navbar";
 import { useEffect } from "react";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { useRouter } from "next/router";
-import PDFDropdown from "@/Components/PDFDropdown";
-import PDFUpload from "@/Components/PDFUpload";
-import signInAnonymouslyIfUploader from "../Components/signInAnonymouslyIfUploader";
+
 import Dashboard from "@/Components/Dashboard";
-import Newsletter from "@/Components/Newsletter";
+import Newsletters from "@/Components/Newsletters";
 const navigation = [
   { name: "Newsletters", icon: FolderIcon, view: "newsletters" },
   { name: "PDFs",  icon: ServerIcon, view: "date" },
-  { name: "PDF Uploader", icon: SignalIcon, view: "PDF" },
 ];
 
 function classNames(...classes) {
@@ -72,13 +68,7 @@ export default function Members() {
   if (!user) return null;
 
   // Call signInAnonymouslyIfUploader directly here
-  signInAnonymouslyIfUploader(isUploader)
-    .then(() => {
-      // Authentication successful, you can perform actions as an anonymous user
-    })
-    .catch((error) => {
-      console.error("Error signing in anonymously:", error);
-    });
+
   return (
     <div>
         <div className="pl-64">
@@ -215,9 +205,8 @@ export default function Members() {
       </div>
       <div className="ml-48">
       {view === "keyword" && <Search />}
-      {view === "date" && <PDFDropdown />}
-      {view === "PDF" && isUploader && <PDFUpload />}
-      {view === "newsletters" && <Newsletter />}
+      {view === "PDF" && <PDFUpload />}
+      {view === "newsletters" && <Newsletters />}
 </div>
     </div>
   );
