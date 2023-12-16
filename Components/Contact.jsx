@@ -12,17 +12,19 @@
   }
   ```
 */
-import { useState } from 'react'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { Switch } from '@headlessui/react'
+import { useState } from "react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { Switch } from "@headlessui/react";
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function Contact() {
-  const [agreed, setAgreed] = useState(false)
- const handleSubmit = async (event) => {
+  const [agreed, setAgreed] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     const formData = {
@@ -34,7 +36,7 @@ export default function Contact() {
     };
 
     try {
-      const response = await fetch('/api/sendEmail', {
+      const response = await fetch("/api/sendEmail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -43,7 +45,7 @@ export default function Contact() {
       });
 
       if (response.ok) {
-        // Handle success - show a message to the user, clear the form, etc.
+        setIsModalOpen(true);
         console.log("Form submitted successfully");
       } else {
         throw new Error("Form submission failed");
@@ -52,26 +54,37 @@ export default function Contact() {
       console.error("There was an error submitting the form:", error);
     }
   };
+    const closeModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
       <div
         className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
         aria-hidden="true"
       >
-        <div
-        
-        />
+        <div />
       </div>
       <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Got a question?</h2>
+        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          Got a question?
+        </h2>
         <p className="mt-2 text-lg leading-8 text-gray-600">
-We would love to have you join us. If you have any questions, fill out the form below and someone will reach out to you.        </p>
+          We would love to have you join us. If you have any questions, fill out
+          the form below and someone will reach out to you.{" "}
+        </p>
       </div>
-      <form         onSubmit={handleSubmit}
- method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
+      <form
+        onSubmit={handleSubmit}
+        method="POST"
+        className="mx-auto mt-16 max-w-xl sm:mt-20"
+      >
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
-            <label htmlFor="firstName" className="block text-sm font-semibold leading-6 text-gray-900">
+            <label
+              htmlFor="firstName"
+              className="block text-sm font-semibold leading-6 text-gray-900"
+            >
               First name
             </label>
             <div className="mt-2.5">
@@ -85,7 +98,10 @@ We would love to have you join us. If you have any questions, fill out the form 
             </div>
           </div>
           <div>
-            <label htmlFor="lastName" className="block text-sm font-semibold leading-6 text-gray-900">
+            <label
+              htmlFor="lastName"
+              className="block text-sm font-semibold leading-6 text-gray-900"
+            >
               Last name
             </label>
             <div className="mt-2.5">
@@ -98,11 +114,12 @@ We would love to have you join us. If you have any questions, fill out the form 
               />
             </div>
           </div>
+          <div className="sm:col-span-2"></div>
           <div className="sm:col-span-2">
-         
-          </div>
-          <div className="sm:col-span-2">
-            <label htmlFor="email" className="block text-sm font-semibold leading-6 text-gray-900">
+            <label
+              htmlFor="email"
+              className="block text-sm font-semibold leading-6 text-gray-900"
+            >
               Email
             </label>
             <div className="mt-2.5">
@@ -116,11 +133,13 @@ We would love to have you join us. If you have any questions, fill out the form 
             </div>
           </div>
           <div className="sm:col-span-2">
-            <label htmlFor="phoneNumber" className="block text-sm font-semibold leading-6 text-gray-900">
+            <label
+              htmlFor="phoneNumber"
+              className="block text-sm font-semibold leading-6 text-gray-900"
+            >
               Phone number
             </label>
             <div className="relative mt-2.5">
-            
               <input
                 type="tel"
                 name="phoneNumber"
@@ -131,7 +150,10 @@ We would love to have you join us. If you have any questions, fill out the form 
             </div>
           </div>
           <div className="sm:col-span-2">
-            <label htmlFor="message" className="block text-sm font-semibold leading-6 text-gray-900">
+            <label
+              htmlFor="message"
+              className="block text-sm font-semibold leading-6 text-gray-900"
+            >
               Message
             </label>
             <div className="mt-2.5">
@@ -140,7 +162,7 @@ We would love to have you join us. If you have any questions, fill out the form 
                 id="message"
                 rows={4}
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6"
-                defaultValue={''}
+                defaultValue={""}
               />
             </div>
           </div>
@@ -150,22 +172,22 @@ We would love to have you join us. If you have any questions, fill out the form 
                 checked={agreed}
                 onChange={setAgreed}
                 className={classNames(
-                  agreed ? 'bg-red-600' : 'bg-gray-200',
-                  'flex w-8 flex-none cursor-pointer rounded-full p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600'
+                  agreed ? "bg-red-600" : "bg-gray-200",
+                  "flex w-8 flex-none cursor-pointer rounded-full p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
                 )}
               >
                 <span className="sr-only">Agree to policies</span>
                 <span
                   aria-hidden="true"
                   className={classNames(
-                    agreed ? 'translate-x-3.5' : 'translate-x-0',
-                    'h-4 w-4 transform rounded-full bg-white shadow-sm ring-1 ring-gray-900/5 transition duration-200 ease-in-out'
+                    agreed ? "translate-x-3.5" : "translate-x-0",
+                    "h-4 w-4 transform rounded-full bg-white shadow-sm ring-1 ring-gray-900/5 transition duration-200 ease-in-out"
                   )}
                 />
               </Switch>
             </div>
             <Switch.Label className="text-sm leading-6 text-gray-600">
-              By selecting this, you agree to our{' '}
+              By selecting this, you agree to our{" "}
               <a href="#" className="font-semibold text-red-600">
                 privacy&nbsp;policy
               </a>
@@ -180,8 +202,23 @@ We would love to have you join us. If you have any questions, fill out the form 
           >
             Let's talk
           </button>
+            {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          <div className="modal-bg fixed inset-0 bg-black opacity-50"></div>
+          <div className="modal-content bg-white p-4 rounded-lg shadow-lg">
+            <p className="text-lg font-semibold text-green-600">Submission Successful!</p>
+            <p>Your submission was successful. Thank you!</p>
+            <button
+              onClick={closeModal}
+              className="mt-4 bg-red-600 text-white py-2 px-4 rounded hover:bg-red-500"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
         </div>
       </form>
     </div>
-  )
+  );
 }
