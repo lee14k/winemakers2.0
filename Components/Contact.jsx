@@ -22,7 +22,7 @@ function classNames(...classes) {
 
 export default function Contact() {
   const [agreed, setAgreed] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
+  const [isModalOpen, setIsModalOpen] = useState(true); // State for modal visibility
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -205,7 +205,7 @@ export default function Contact() {
             {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           <div className="modal-bg fixed inset-0 bg-black opacity-50"></div>
-          <div className="modal-content bg-white p-4 rounded-lg shadow-lg">
+          <div className="modal-content bg-white p-4 rounded-lg shadow-lg z-50">
             <p className="text-lg font-semibold text-green-600">Submission Successful!</p>
             <p>Your submission was successful. Thank you!</p>
             <button
