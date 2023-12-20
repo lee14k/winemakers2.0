@@ -38,9 +38,9 @@ import Dashboard from "@/Components/Dashboard";
 import Newsletters from "@/Components/Newsletters";
 import Vintners from "@/Components/Vintners";
 import Procedures from "@/Components/Procedures";
-import Reference from "@/Components/Reference";
+import References from "@/Components/Reference";
 import Presentations from "@/Components/Presentations";
-import Clubinfo from "@/Components/Clubinfo";
+import ClubInfo from "@/Components/Clubinfo";
 
 const navigation = [
   { name: "Newsletters", icon: FolderIcon, view: "newsletters" },
@@ -231,9 +231,9 @@ export default function Members() {
         {view === "newsletters" && <Newsletters />}
         {view === "Vintners" && <Vintners />}
         {view === "procedures" && <Procedures />}
-        {view === "clubinfo" && <Clubinfo />}
+        {view === "clubinfo" && <ClubInfo />}
         {view === "presentations" && <Presentations />}
-        {view === "reference" && <Reference />}
+        {view === "reference" && <References />}
       </div>
     </div>
   );
