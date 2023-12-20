@@ -218,6 +218,7 @@ export default function Members() {
       </div>
       <div className="ml-48">
                         <p className="mt-10 mx-24">Hello, {user.name}!</p>
+                        <p>Click a tab to look through our resources!</p>
 
         {view === "PDFs" && <PDFs />}
         {view === "newsletters" && <Newsletters />}
