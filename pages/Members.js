@@ -38,11 +38,19 @@ import Dashboard from "@/Components/Dashboard";
 import Newsletters from "@/Components/Newsletters";
 import Vintners from "@/Components/Vintners";
 import Procedures from "@/Components/Procedures";
+import Reference from "@/Components/Reference";
+import Presentations from "@/Components/Presentations";
+import Clubinfo from "@/Components/Clubinfo";
+
 const navigation = [
   { name: "Newsletters", icon: FolderIcon, view: "newsletters" },
   { name: "PDFs", icon: FolderIcon, view: "PDFs" },
   { name: "Vintners Press", icon: FolderIcon, view: "Vintners" },
-  { name: "Procedures", icon: FolderIcon, view: "procedures" },
+  { name: "Protocols and Recipes", icon: FolderIcon, view: "procedures" },
+  { name: "Club Information", icon: FolderIcon, view: "clubinfo" },
+  { name: "Presentations", icon: FolderIcon, view: "presentations" },
+    { name: "Reference Resources", icon: FolderIcon, view: "reference" },
+
 ];
 
 function classNames(...classes) {
@@ -80,7 +88,6 @@ export default function Members() {
       <div className="">
         <div />
         <div>
-
           <Transition.Root show={sidebarOpen} as={Fragment}>
             <Dialog
               as="div"
@@ -217,13 +224,16 @@ export default function Members() {
         </div>
       </div>
       <div className="ml-48">
-                        <p className="mt-10 mx-24">Hello, {user.name}!</p>
-                        <p>Click a tab to look through our resources!</p>
+        <p className="mt-10 mx-24">Hello, {user.name}!</p>
+        <p>Click a tab to look through our resources!</p>
 
         {view === "PDFs" && <PDFs />}
         {view === "newsletters" && <Newsletters />}
         {view === "Vintners" && <Vintners />}
         {view === "procedures" && <Procedures />}
+        {view === "clubinfo" && <Clubinfo />}
+        {view === "presentations" && <Presentations />}
+        {view === "reference" && <Reference />}
       </div>
     </div>
   );
