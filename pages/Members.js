@@ -38,9 +38,9 @@ import Dashboard from "@/Components/Dashboard";
 import Newsletters from "@/Components/Newsletters";
 import Vintners from "@/Components/Vintners";
 import Procedures from "@/Components/Procedures";
-import References from "@/Components/Reference";
+import References from "@/Components/References";
 import Presentations from "@/Components/Presentations";
-import ClubInfo from "@/Components/Clubinfo";
+import ClubInfo from "@/Components/ClubInfo";
 
 const navigation = [
   { name: "Newsletters", icon: FolderIcon, view: "newsletters" },
