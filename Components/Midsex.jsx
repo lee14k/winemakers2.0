@@ -5,12 +5,12 @@ export default function Middsex() {
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
           <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Welcome</h2>
-            <p className="mt-6 text-xl leading-8 text-gray-600">
+            <p className="mt-6 text-xl leading-8 text-black">
          The Wisconsin Vintners Association is an educational organization that focuses on teaching its members the fundamentals of winemaking. Organized in 1970, a wide range of members from beginners to award winning experts, join together to share their knowledge and experience.
 
 
             </p>
-            <p className="mt-6 text-base leading-7 text-gray-600">
+            <p className="mt-6 text-base leading-7 text-black">
           During the ensuing decades, the WVA has focused on teaching our members the fundamentals of wine making, and in doing so, we have endeavored to make our association a truly social club that welcomes anyone interested in wine and wine making.
             </p>
             <div className="mt-10 flex">

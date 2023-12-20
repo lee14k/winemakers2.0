@@ -22,7 +22,7 @@ function classNames(...classes) {
 
 export default function Contact() {
   const [agreed, setAgreed] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(true); // State for modal visibility
+  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
 
   const handleSubmit = async (event) => {
     event.preventDefault();
