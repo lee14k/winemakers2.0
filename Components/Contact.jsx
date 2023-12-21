@@ -69,7 +69,7 @@ export default function Contact() {
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
           Got a question?
         </h2>
-        <p className="mt-2 text-lg leading-8 text-gray-600">
+        <p className="mt-2 text-xl leading-8 ">
           We would love to have you join us. If you have any questions, fill out
           the form below and someone will reach out to you.{" "}
         </p>

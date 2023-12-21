@@ -104,7 +104,7 @@ export default function Example() {
                   <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
                    About Us
                   </h1>
-                  <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
+                  <p className="relative mt-6 text-xl leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
                 The Wisconsin Vintners Association is an educational organization that focuses on teaching its members the fundamentals of winemaking. Organized in 1970, a wide range of members from beginners to award winning experts, join together to share their knowledge and experience.
 
 
@@ -166,14 +166,14 @@ export default function Example() {
         {/* Content section */}
         <div className="mx-auto -mt-12 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our Story</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Our Story</h2>
             <div className="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
               <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
-                <p className="text-xl leading-8 ">
+                <p className="text-2xl leading-8 ">
              The Wisconsin Vintners Association came into existence in 1970 because a group of amateur winemakers thought it would be a good idea to have a meeting place for those interested in making and sharing this wonderful alcoholic beverage. During the ensuing decades, the WVA has focused on teaching our members the fundamentals of wine making, and in doing so, we have endeavored to make our association a truly social club that welcomes anyone interested in wine and wine making.
 
                 </p>
-                <div className="mt-10 max-w-xl text-base leading-7 text-gray-700">
+                <div className="mt-10 max-w-xl text-xl leading-7 ">
                   <p>
                  Membership is open to anyone over 21 years old who has an interest in wine making. There are six membership meetings a year and six additional off site events. Meetings start at 7:00 PM and are held at Clifford’s Restaurant, 10418 West Forest Home Avenue in Hales Corners, WI. Please see the Club Events page for meeting and offsite events dates. At each meeting we conduct some club business, followed by a wine or wine making related topic, which could include a special speaker or a wine evaluation.
 

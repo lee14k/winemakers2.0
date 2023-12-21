@@ -26,7 +26,7 @@ export default function Eventsgrid({ events }) {
             backgroundPosition: "center",
           }}
         >
-          <h2 className="gridhead"> <Eventspageevent
+          <h2 className="gridhead font-bold"> <Eventspageevent
          
             header={event.title.rendered}
               date={event.date}
