@@ -41,7 +41,7 @@ import Procedures from "@/Components/Procedures";
 import References from "@/Components/References";
 import Presentations from "@/Components/Presentations";
 import ClubInfo from "@/Components/ClubInfo";
-
+import Footer from "@/Components/Footer";
 const navigation = [
   { name: "Newsletters", icon: FolderIcon, view: "newsletters" },
   { name: "PDFs", icon: FolderIcon, view: "PDFs" },
@@ -236,6 +236,7 @@ export default function Members() {
         {view === "reference" && <References />}
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }
