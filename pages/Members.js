@@ -225,8 +225,8 @@ export default function Members() {
       </div>
       <div className="ml-48">
         <p className="mt-10 mx-24">Hello, {user.name}!</p>
-        <p>Click a folder to look through our resources!</p>
-
+        <p className="mt-10 mx-24">Click a folder to look through our resources!</p>
+<div className="mt-10 mx-24">
         {view === "PDFs" && <PDFs />}
         {view === "newsletters" && <Newsletters />}
         {view === "Vintners" && <Vintners />}
@@ -234,6 +234,7 @@ export default function Members() {
         {view === "clubinfo" && <ClubInfo />}
         {view === "presentations" && <Presentations />}
         {view === "reference" && <References />}
+        </div>
       </div>
     </div>
   );
