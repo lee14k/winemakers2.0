@@ -44,12 +44,11 @@ import ClubInfo from "@/Components/ClubInfo";
 import Footer from "@/Components/Footer";
 const navigation = [
   { name: "Newsletters", icon: FolderIcon, view: "newsletters" },
-  { name: "PDFs", icon: FolderIcon, view: "PDFs" },
   { name: "Vintners Press", icon: FolderIcon, view: "Vintners" },
   { name: "Protocols and Recipes", icon: FolderIcon, view: "procedures" },
   { name: "Club Information", icon: FolderIcon, view: "clubinfo" },
   { name: "Presentations", icon: FolderIcon, view: "presentations" },
-    { name: "Reference Resources", icon: FolderIcon, view: "reference" },
+    { name: "Reference/Resources", icon: FolderIcon, view: "reference" },
 
 ];
 
@@ -227,7 +226,6 @@ export default function Members() {
         <p className="mt-10 mx-24">Hello, {user.name}!</p>
         <p className="mt-10 mx-24">Click a folder to look through our resources!</p>
 <div className="mt-10 mx-24">
-        {view === "PDFs" && <PDFs />}
         {view === "newsletters" && <Newsletters />}
         {view === "Vintners" && <Vintners />}
         {view === "procedures" && <Procedures />}
