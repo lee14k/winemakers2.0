@@ -1,24 +1,25 @@
-'use client'
-import { useState } from 'react'
-import { Dialog } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import Navbar from "Components/Navbar"
-import Footer from 'Components/Footer'
-import Contact from 'Components/Contact'
-const stats = [
-  { value: '283 Members' },
-  { value: '53 Years' }
-]
+"use client";
+import { useState } from "react";
+import { Dialog } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Navbar from "Components/Navbar";
+import Footer from "Components/Footer";
+import Contact from "Components/Contact";
+const stats = [{ value: "283 Members" }, { value: "53 Years" }];
 
 export default function Example() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className="bg-white">
-        <Navbar/>
+      <Navbar />
       <header className="absolute inset-x-0 top-0 z-50">
-     
-        <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+        <Dialog
+          as="div"
+          className="lg:hidden"
+          open={mobileMenuOpen}
+          onClose={setMobileMenuOpen}
+        >
           <div className="fixed inset-0 z-50" />
           <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
@@ -41,9 +42,7 @@ export default function Example() {
             </div>
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
-                <div className="space-y-2 py-6">
-                 
-                </div>
+                <div className="space-y-2 py-6"></div>
                 <div className="py-6">
                   <a
                     href="#"
@@ -83,7 +82,12 @@ export default function Example() {
                 strokeWidth={0}
               />
             </svg>
-            <rect width="100%" height="100%" strokeWidth={0} fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)" />
+            <rect
+              width="100%"
+              height="100%"
+              strokeWidth={0}
+              fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)"
+            />
           </svg>
           <div
             className="absolute left-1/2 right-0 top-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48"
@@ -93,7 +97,7 @@ export default function Example() {
               className="aspect-[801/1036] w-[50.0625rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
               style={{
                 clipPath:
-                  'polygon(63.1% 29.5%, 100% 17.1%, 76.6% 3%, 48.4% 0%, 44.6% 4.7%, 54.5% 25.3%, 59.8% 49%, 55.2% 57.8%, 44.4% 57.2%, 27.8% 47.9%, 35.1% 81.5%, 0% 97.7%, 39.2% 100%, 35.2% 81.4%, 97.2% 52.8%, 63.1% 29.5%)',
+                  "polygon(63.1% 29.5%, 100% 17.1%, 76.6% 3%, 48.4% 0%, 44.6% 4.7%, 54.5% 25.3%, 59.8% 49%, 55.2% 57.8%, 44.4% 57.2%, 27.8% 47.9%, 35.1% 81.5%, 0% 97.7%, 39.2% 100%, 35.2% 81.4%, 97.2% 52.8%, 63.1% 29.5%)",
               }}
             />
           </div>
@@ -102,12 +106,15 @@ export default function Example() {
               <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <div className="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
                   <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                   About Us
+                    About Us
                   </h1>
                   <p className="relative mt-6 text-xl leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
-                The Wisconsin Vintners Association is an educational organization that focuses on teaching its members the fundamentals of winemaking. Organized in 1970, a wide range of members from beginners to award winning experts, join together to share their knowledge and experience.
-
-
+                    The Wisconsin Vintners Association, Inc. is a not for profit
+                    organization that focuses on educating its members on the
+                    fundamentals of amateur winemaking. Organized in 1970, a
+                    wide range of members from beginners to award winning
+                    experts, join together to share their knowledge and
+                    experience.
                   </p>
                 </div>
                 <div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
@@ -166,30 +173,48 @@ export default function Example() {
         {/* Content section */}
         <div className="mx-auto -mt-12 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Our Story</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              Our Story
+            </h2>
             <div className="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
               <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
                 <p className="text-2xl leading-8 ">
-             The Wisconsin Vintners Association came into existence in 1970 because a group of amateur winemakers thought it would be a good idea to have a meeting place for those interested in making and sharing this wonderful alcoholic beverage. During the ensuing decades, the WVA has focused on teaching our members the fundamentals of wine making, and in doing so, we have endeavored to make our association a truly social club that welcomes anyone interested in wine and wine making.
-
+                  The Wisconsin Vintners Association, Inc. came into existence
+                  in 1970 because a group of amateur winemakers thought it would
+                  be a good idea to have a meeting place for those interested in
+                  making and sharing this wonderful homemade beverage. During
+                  the ensuing decades, the WVA has focused on teaching our
+                  members the fundamentals of wine making, and in doing so, we
+                  have endeavored to make our association a truly social club
+                  that welcomes anyone interested in wine and the art of wine
+                  making.
                 </p>
                 <div className="mt-10 max-w-xl text-xl leading-7 ">
                   <p>
-                 Membership is open to anyone over 21 years old who has an interest in wine making. There are six membership meetings a year and six additional off site events. Meetings start at 7:00 PM and are held at Clifford’s Restaurant, 10418 West Forest Home Avenue in Hales Corners, WI. Please see the Club Events page for meeting and offsite events dates. At each meeting we conduct some club business, followed by a wine or wine making related topic, which could include a special speaker or a wine evaluation.
-
-                  </p>
-                  <p className="mt-10">
-                 Today, the WVA is one of the oldest and largest amateur wine making clubs in the country, if not the oldest and largest. Over the past decade the WVA has also become philanthropic, regularly donating money to universities and other organizations that promote wine making education. After five decades of growth and development, the WVA remains a club that prides itself on accepting new members as potential lifelong friends.
-
+                    Today, the WVA is one of the oldest and largest amateur wine
+                    making clubs in the country. The WVA is also philanthropic,
+                    regularly donating money to universities and other
+                    organizations that promote wine making education. After more
+                    than five decades of growth and development, the WVA remains
+                    a club that prides itself on accepting new members in the
+                    promotion of home winemaking.
                   </p>
                 </div>
               </div>
+
               <div className="lg:flex lg:flex-auto lg:justify-center">
                 <dl className="w-64 space-y-8 xl:w-80">
                   {stats.map((stat) => (
-                    <div key={stat.label} className="flex flex-col-reverse gap-y-4">
-                      <dt className="text-base leading-7 text-gray-600">{stat.label}</dt>
-                      <dd className="text-5xl font-semibold tracking-tight text-gray-900">{stat.value}</dd>
+                    <div
+                      key={stat.label}
+                      className="flex flex-col-reverse gap-y-4"
+                    >
+                      <dt className="text-base leading-7 text-gray-600">
+                        {stat.label}
+                      </dt>
+                      <dd className="text-5xl font-semibold tracking-tight text-gray-900">
+                        {stat.value}
+                      </dd>
                     </div>
                   ))}
                 </dl>
@@ -197,7 +222,27 @@ export default function Example() {
             </div>
           </div>
         </div>
-
+        <div className="mx-auto mt-24 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8">
+        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mt-24">
+          Membership Benefits{" "}
+        </h2>
+        <p className="mt-10 text-xl leading-7">
+          Membership is open to anyone over 21 years old who has an interest in
+          wine making. There are six membership meetings a year and six
+          additional off-site events including special dinners, fundraiser,
+          seminars and winery and vineyard tours. Membership meetings start at
+          7:00 PM and are held at Clifford’s Restaurant, 10418 West Forest Home
+          Avenue in Hales Corners, WI. Please see the Club Events page for
+          meeting and offsite events dates. At each meeting we conduct club
+          business, followed by a wine or wine making related topic, which could
+          include a special speaker and/or a wine evaluation. Bring your own
+          wine glass and a bottle to share! Members get access to resources such
+          as club presentations, references and winemaking guidance, Vintners
+          Press articles and participation in group purchases of juice and
+          grapes. Members enjoy discounts to local vendors and affiliates like
+          WineMaker Magazine. Logo apparel is available through Lands’ End.
+        </p>
+        </div>
         {/* Image section */}
         <div className="mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8">
           <img
@@ -207,23 +252,18 @@ export default function Example() {
           />
         </div>
 
-
         {/* Values section */}
-       
-
-        
 
         {/* Team section */}
-       
+
         {/* Blog section */}
-        
       </main>
 
       {/* Footer */}
-      <Contact/>
+      <Contact />
       <footer className="mx-auto max-w-7xl overflow-hidden pb-20 sm:pb-24 lg:px-8">
-       <Footer/>
+        <Footer />
       </footer>
     </div>
-  )
+  );
 }

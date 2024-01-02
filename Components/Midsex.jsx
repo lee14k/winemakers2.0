@@ -6,12 +6,16 @@ export default function Middsex() {
           <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Welcome</h2>
             <p className="mt-6 text-xl leading-8 text-black">
-         The Wisconsin Vintners Association is an educational organization that focuses on teaching its members the fundamentals of winemaking. Organized in 1970, a wide range of members from beginners to award winning experts, join together to share their knowledge and experience.
+        The WVA holds educational meetings and social events that promote the amateur production of fine wine at home.
+We learn how to produce, test and assess homemade wine.  We explore uniqueness, study components and subtleties of wine while sharing knowledge and fun with others.
+
 
 
             </p>
             <p className="mt-6 text-base leading-7 text-black">
-          During the ensuing decades, the WVA has focused on teaching our members the fundamentals of wine making, and in doing so, we have endeavored to make our association a truly social club that welcomes anyone interested in wine and wine making.
+        Club activities include;
+Membership Meetings, Picnics, Fundraisers, Club Evaluations, State Fair Wine Judging, Winery and Vinyard Tours, Newsletters, Published Articles, Winemaking Seminars, Wine Evaluations and Classes, and Group Purchases of Juice and Grapes.
+
             </p>
             <div className="mt-10 flex">
               <a
