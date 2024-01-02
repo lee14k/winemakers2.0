@@ -12,9 +12,7 @@ export default function Eventsgrid({ events }) {
     setFlipStates(newFlipStates);
   };
 
-
   return (
-    
     <div className="gridwrapper front">
       {events.map((event, index) => (
         <div
@@ -26,23 +24,29 @@ export default function Eventsgrid({ events }) {
             backgroundPosition: "center",
           }}
         >
-          <h2 className="gridhead font-bold"> <Eventspageevent
-         
-            header={event.title.rendered}
+          <h2 className="gridhead font-bold">
+            <Eventspageevent
+              header={event.title.rendered}
               date={event.date}
-            time={event.time}
-            price={event.price.rendered}
-       
-          />  </h2>
+              time={event.time}
+              price={event.price.rendered}
+            />
+          </h2>
 
           <div className="back" onClick={() => handleFlip(index)}>
- <Eventspageevent
-            time={event.time}
-            header={event.title.rendered}
-            description={event.description}
-            price={event.price.rendered}
-          />          </div>
-     
+            <Eventspageevent
+              time={event.time}
+              header={event.title.rendered}
+              description={event.description}
+              price={event.price.rendered}
+            />
+            {/* Conditionally render the link button */}
+            {event.acf && event.acf.link && (
+              <a href={event.acf.link} target="_blank" rel="noopener noreferrer" className="event-link-button">
+                More Info
+              </a>
+            )}
+          </div>
         </div>
       ))}
     </div>
