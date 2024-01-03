@@ -2,14 +2,58 @@ import Footer from "./Footer";
 const posts = [
   {
     id: 1,
-    title: "Tips & Tricks for Winemaking",
+    title: "Sample Member Presentation",
     href: "/Tips-and-Tricks-9_13_23.pdf",
     description:
       "A slideshow displaying some of our most recent and most favorite tricks for getting started making wine at home",
     imageUrl:
       "./midwinepic.jpeg",    
   },
-
+    {
+    id: 1,
+    title: "Sample Newsletter",
+    href: "https://drive.google.com/file/d/1AFtVbiVbivrb6-uyluoMvy1m0kpjwFWB/view?usp=drive_link",
+    description:
+      "A slideshow displaying some of our most recent and most favorite tricks for getting started making wine at home",
+    imageUrl:
+      "./four.jpg",    
+  },
+{
+    id: 1,
+    title: "Sample Vintners Press",
+    href: "https://drive.google.com/file/d/1Oy5X8dqBFxfQXCqcZFunf8K8Wt8YN5Z1/view?usp=drive_linkf",
+    description:
+      "Sample of a club publication that is sent out to members monthly",
+    imageUrl:
+      "./5.jpg",    
+  },
+  {
+    id: 1,
+    title: "Sample Vintners Press",
+    href: "https://drive.google.com/file/d/1AFtVbiVbivrb6-uyluoMvy1m0kpjwFWB/view?usp=drive_link",
+    description:
+      "Sample of a club publication that is sent out to members monthly",
+    imageUrl:
+      "./8.jpg",    
+  },
+    {
+    id: 1,
+    title: "Sample Winemaking Resource",
+    href: "https://drive.google.com/file/d/1r-gizEbyLJHBVZNwc6wGAc5TouyfqQ9_/view?usp=sharing",
+    description:
+      "A protocol for white wine making at home",
+    imageUrl:
+      "./9.jpg",    
+  },
+    {
+    id: 1,
+    title: "Sample Winemaking Resource",
+    href: "https://drive.google.com/file/d/1LSJMChMHagsWbW2Yr8fErkk0v_frtzm1/view?usp=sharing",
+    description:
+      "A merlot yeast selection chart",
+    imageUrl:
+      "./7.jpg",    
+  },
 ];
 
 export default function ResourcesList() {
