@@ -48,8 +48,8 @@ const navigation = [
   { name: "Protocols and Recipes", icon: FolderIcon, view: "procedures" },
   { name: "Club Information", icon: FolderIcon, view: "clubinfo" },
   { name: "Presentations", icon: FolderIcon, view: "presentations" },
-    { name: "Reference/Resources", icon: FolderIcon, view: "reference" },
-
+  { name: "Reference/Resources", icon: FolderIcon, view: "reference" },
+  { name: "YouTube Channel", icon: GlobeAltIcon, view: "youtube" },
 ];
 
 function classNames(...classes) {
@@ -72,6 +72,13 @@ export default function Members() {
     setView(viewName);
     console.log(viewName);
     // Close the sidebar if open in mobile view
+    setSidebarOpen(false);
+    if (viewName === "youtube") {
+      window.open("https://www.youtube.com/@WIVintners", "_blank");
+      return;
+    }
+    setView(viewName);
+    console.log(viewName);
     setSidebarOpen(false);
   };
   if (loading) return <p>Loading...</p>;
@@ -224,17 +231,20 @@ export default function Members() {
       </div>
       <div className="ml-48">
         <p className="mt-10 mx-24">Hello, {user.name}!</p>
-        <p className="mt-10 mx-24">Click a folder to look through our resources!</p>
-<div className="mt-10 mx-24">
-        {view === "newsletters" && <Newsletters />}
-        {view === "Vintners" && <Vintners />}
-        {view === "procedures" && <Procedures />}
-        {view === "clubinfo" && <ClubInfo />}
-        {view === "presentations" && <Presentations />}
-        {view === "reference" && <References />}
+        <p className="mt-10 mx-24">
+          Click a folder to look through our resources!
+        </p>
+        <div className="mt-10 mx-24">
+          {view === "newsletters" && <Newsletters />}
+          {view === "Vintners" && <Vintners />}
+          {view === "procedures" && <Procedures />}
+          {view === "clubinfo" && <ClubInfo />}
+          {view === "presentations" && <Presentations />}
+          {view === "reference" && <References />}
+          {view === "reference" && <References />}
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
