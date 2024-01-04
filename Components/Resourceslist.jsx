@@ -12,9 +12,9 @@ const posts = [
     {
     id: 1,
     title: "Sample Newsletter",
-    href: "https://drive.google.com/file/d/1AFtVbiVbivrb6-uyluoMvy1m0kpjwFWB/view?usp=drive_link",
+    href: "https://drive.google.com/file/d/173vly1_IxeCSMl4hOweYTqrK_EC_pT4A/view?usp=drive_link",
     description:
-      "A slideshow displaying some of our most recent and most favorite tricks for getting started making wine at home",
+      "Our monthly club newsletter",
     imageUrl:
       "./four.jpg",    
   },
@@ -23,7 +23,7 @@ const posts = [
     title: "Sample Vintners Press",
     href: "https://drive.google.com/file/d/1Oy5X8dqBFxfQXCqcZFunf8K8Wt8YN5Z1/view?usp=drive_linkf",
     description:
-      "Sample of a club publication that is sent out to members monthly",
+      "Announcements of events and activities of the club sent to members",
     imageUrl:
       "./5.jpg",    
   },
@@ -32,7 +32,7 @@ const posts = [
     title: "Sample Vintners Press",
     href: "https://drive.google.com/file/d/1AFtVbiVbivrb6-uyluoMvy1m0kpjwFWB/view?usp=drive_link",
     description:
-      "Sample of a club publication that is sent out to members monthly",
+      "Announcements of events and activities of the club sent to members",
     imageUrl:
       "./8.jpg",    
   },
