@@ -16,7 +16,7 @@ export default function Headbanner () {
             className="my-20"
             />
        
-            <button onClick={handleButtonClick} className='join'>Join Us Now!</button>
+            <button onClick={handleButtonClick} className='join'>Join/Renew Here</button>
         </div>
     )
 }
