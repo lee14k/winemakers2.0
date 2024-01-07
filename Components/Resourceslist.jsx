@@ -14,7 +14,7 @@ const posts = [
     title: "Sample Newsletter",
     href: "https://drive.google.com/file/d/173vly1_IxeCSMl4hOweYTqrK_EC_pT4A/view?usp=drive_link",
     description:
-      "Our monthly club newsletter",
+      "Announcements of events and activities of the club sent to members",
     imageUrl:
       "./four.jpg",    
   },
@@ -23,7 +23,7 @@ const posts = [
     title: "Sample Vintners Press",
     href: "https://drive.google.com/file/d/1Oy5X8dqBFxfQXCqcZFunf8K8Wt8YN5Z1/view?usp=drive_linkf",
     description:
-      "Announcements of events and activities of the club sent to members",
+      "Informational and educational articles written by members",
     imageUrl:
       "./5.jpg",    
   },
