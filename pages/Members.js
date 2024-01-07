@@ -232,7 +232,7 @@ export default function Members() {
       <div className="ml-48">
         <p className="mt-10 mx-24">Hello, {user.name}!</p>
         <p className="mt-10 mx-24">
-          Click a folder to look through our resources!
+          Click a folder to look through our resources! Scroll down after clicking to view
         </p>
         <div className="mt-10 mx-24">
           {view === "newsletters" && <Newsletters />}

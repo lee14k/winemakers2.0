@@ -27,15 +27,7 @@ const posts = [
     imageUrl:
       "./5.jpg",    
   },
-  {
-    id: 1,
-    title: "Sample Vintners Press",
-    href: "https://drive.google.com/file/d/1AFtVbiVbivrb6-uyluoMvy1m0kpjwFWB/view?usp=drive_link",
-    description:
-      "Announcements of events and activities of the club sent to members",
-    imageUrl:
-      "./8.jpg",    
-  },
+  
     {
     id: 1,
     title: "Sample Winemaking Resource",
