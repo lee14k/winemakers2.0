@@ -5,7 +5,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Navbar from "Components/Navbar";
 import Footer from "Components/Footer";
 import Contact from "Components/Contact";
-const stats = [{ value: "283 Members" }, { value: "53 Years" }];
+const stats = [{ value: "280+ Members" }, { value: "Since 1970" }];
 
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
