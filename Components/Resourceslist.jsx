@@ -7,7 +7,7 @@ const posts = [
     description:
       "A slideshow displaying some of our most recent and most favorite tricks for getting started making wine at home",
     imageUrl:
-      "./midwinepic.jpeg",    
+      "/slideshow.png",    
   },
     {
     id: 1,
@@ -16,7 +16,7 @@ const posts = [
     description:
       "Announcements of events and activities of the club sent to members",
     imageUrl:
-      "./four.jpg",    
+      "/WVAlogo.jpg",    
   },
 {
     id: 1,
@@ -25,7 +25,7 @@ const posts = [
     description:
       "Informational and educational articles written by members",
     imageUrl:
-      "./5.jpg",    
+      "/vintnerspress.png",    
   },
   
     {
@@ -35,7 +35,7 @@ const posts = [
     description:
       "A protocol for white wine making at home",
     imageUrl:
-      "./9.jpg",    
+      "grapebundle.png",    
   },
     {
     id: 1,
@@ -44,7 +44,7 @@ const posts = [
     description:
       "A merlot yeast selection chart",
     imageUrl:
-      "./7.jpg",    
+      "/winebg.png",    
   },
 ];
 
@@ -74,25 +74,19 @@ export default function ResourcesList() {
                   <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
                 </div>
                 <div>
-               
                   <div className="group relative max-w-xl">
                     <h3 className="mt-3 text-xl font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                      <a href={post.href}>
-                        <span className="absolute inset-0" />
-                        {post.title}
-                      </a>
+                      {post.title}
                     </h3>
                     <p className="mt-5 text-lg leading-6 text-gray-600">
                       {post.description}
                     </p>
-                  </div>
-                  <div className="mt-6 flex border-t border-gray-900/5 pt-6">
-                    <div className="relative flex items-center gap-x-4">
-                  
-                      <div className="text-sm leading-6">
-                    
-                      </div>
-                    </div>
+                    <button
+                      className="mt-5 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                      onClick={() => window.location.href = post.href}
+                    >
+                      View Resource
+                    </button>
                   </div>
                 </div>
               </article>
@@ -100,7 +94,7 @@ export default function ResourcesList() {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
