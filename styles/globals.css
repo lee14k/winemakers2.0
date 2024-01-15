@@ -392,3 +392,31 @@ body {
 .griditem {
   background-image: url('/sampleeventbg.png')
 }
+
+@media (min-width: 768px) {
+  .sidebar {
+    display: block; /* Adjust as needed */
+  }
+}
+
+/* Adjust main content area for mobile screens */
+.main-content {
+  padding: 4px; /* Smaller padding on mobile */
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    padding: 16px; /* Larger padding on desktop */
+  }
+}
+
+/* Adjust text sizes for mobile */
+.text-base {
+  font-size: 14px; /* Smaller font size on mobile */
+}
+
+@media (min-width: 768px) {
+  .text-base {
+    font-size: 16px; /* Default font size on desktop */
+  }
+}
