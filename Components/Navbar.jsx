@@ -20,7 +20,6 @@ export default function Navbar() {
     { name: "Gallery", href: "/Gallery", current: false },
     { name: "Events", href: "/Events", current: false },
     { name: "Resources", href: "/Resources", current: false },
-    { name: "Dinner Dance", href: "/DinnerDance", current: false },
   ]);
 
   useEffect(() => {
