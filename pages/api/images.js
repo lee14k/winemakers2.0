@@ -37,7 +37,7 @@ async function fetchAndCategorizeMedia(perPage, currentPage, categorizedMedia = 
 
 export default async function handler(req, res) {
   try {
-    const perPage = 100; // Number of items per page
+    const perPage = 300; // Number of items per page
     const currentPage = parseInt(req.query.page) || 1; // Get page number from request
 
     const categorizedMedia = await fetchAndCategorizeMedia(perPage, currentPage);
