@@ -2,7 +2,7 @@ import axios from 'axios';
 
 async function fetchAndCategorizeMedia(perPage, currentPage, categorizedMedia = {}) {
   try {
-    const response = await axios.get(`http://wihomewinemakers.org/wp-json/wp/v2/media`, {
+    const response = await axios.get('http://wihomewinemakers.org/wp-json/wp/v2/media', {
       params: {
         per_page: perPage,
         page: currentPage,
@@ -13,7 +13,7 @@ async function fetchAndCategorizeMedia(perPage, currentPage, categorizedMedia = 
     // Process and categorize media items, excluding the /Unorganized folder
     mediaItems.forEach(item => {
       const folderName = item.rml_folder_info?.name || 'Uncategorized';
-      if (folderName !== '/Unorganized') { // Check if the folder is not /Unorganized
+      if (folderName !== '/Unorganized') {
         if (!categorizedMedia[folderName]) {
           categorizedMedia[folderName] = [];
         }
@@ -30,15 +30,14 @@ async function fetchAndCategorizeMedia(perPage, currentPage, categorizedMedia = 
       return categorizedMedia;
     }
   } catch (error) {
-    // Handle errors
     throw new Error(`Failed to fetch media items: ${error.message}`);
   }
 }
 
 export default async function handler(req, res) {
   try {
-    const perPage = 300; // Number of items per page
-    const currentPage = parseInt(req.query.page) || 1; // Get page number from request
+    const perPage = 100; // Number of items per page
+    const currentPage = 1; // Start from the first page
 
     const categorizedMedia = await fetchAndCategorizeMedia(perPage, currentPage);
 
