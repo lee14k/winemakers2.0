@@ -9,21 +9,22 @@ async function fetchAndCategorizeMedia(perPage, currentPage, categorizedMedia = 
       }
     });
     const mediaItems = response.data;
+    console.log(mediaItems)
 
-    // Process and categorize media items, excluding the /Unorganized folder
     mediaItems.forEach(item => {
       const folderName = item.rml_folder_info?.name || 'Uncategorized';
       if (folderName !== '/Unorganized') {
         if (!categorizedMedia[folderName]) {
           categorizedMedia[folderName] = [];
         }
+        console.log(categorizedMedia)
         categorizedMedia[folderName].push(item);
       }
     });
 
     // Check if there are more items to fetch
     if (mediaItems.length === perPage) {
-      // Recursively fetch the next page
+      console.log('here')
       return fetchAndCategorizeMedia(perPage, currentPage + 1, categorizedMedia);
     } else {
       // No more items to fetch, return the result
