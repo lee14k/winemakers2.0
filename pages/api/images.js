@@ -9,29 +9,28 @@ async function fetchAndCategorizeMedia(perPage, currentPage, categorizedMedia = 
       }
     });
     const mediaItems = response.data;
-    console.log(mediaItems)
-
+//bug where even tho we asked for 100, it tried to give me 100 - queried 100 but something happened with 2 of them??
+    //
     mediaItems.forEach(item => {
       const folderName = item.rml_folder_info?.name || 'Uncategorized';
       if (folderName !== '/Unorganized') {
         if (!categorizedMedia[folderName]) {
           categorizedMedia[folderName] = [];
         }
-        console.log(categorizedMedia)
+       // console.log(categorizedMedia.length)
         categorizedMedia[folderName].push(item);
       }
     });
 
     // Check if there are more items to fetch
-    if (mediaItems.length === perPage) {
-      console.log('here')
-      return fetchAndCategorizeMedia(perPage, currentPage + 1, categorizedMedia);
-    } else {
+    if (mediaItems.length === 0) {
       // No more items to fetch, return the result
       return categorizedMedia;
+    } else {
+      return fetchAndCategorizeMedia(perPage, currentPage + 1, categorizedMedia);
     }
   } catch (error) {
-    throw new Error(`Failed to fetch media items: ${error.message}`);
+    return categorizedMedia;
   }
 }
 
