@@ -9,9 +9,9 @@ export default function Eventspageevent({ date, time, header, description, price
           <div className=" text-2xl text-black">{date}</div>
           <div>{time}</div>
         </div>
-        <div className="">
+        <div className="  ">
           <h3 className=" text-2xl text-black">{header}</h3>
-          <p>{description}</p>
+          <p className="text-sm">{description}</p>
         </div>
         <div>
           {price && <span>{price}</span>}

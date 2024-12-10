@@ -13,18 +13,18 @@ export default function Eventsgrid({ events }) {
   };
 
   return (
-    <div className="gridwrapper front">
+    <div className="gridwrapper front ">
       {events.map((event, index) => (
         <div
           onClick={() => handleFlip(index)}
-          className={`griditem ${flipStates[index] ? "flip" : ""}`}
+          className={`griditem ${flipStates[index] ? "flip" : ""} `}
           key={index}
           style={{
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         >
-          <h2 className="gridhead font-bold">
+          <h2 className="gridhead font-bold ">
             <Eventspageevent
               header={event.title.rendered}
               date={event.date}
@@ -34,13 +34,13 @@ export default function Eventsgrid({ events }) {
            
           </h2>
 
-          <div className="back" onClick={() => handleFlip(index)}>
+          <div className="back " onClick={() => handleFlip(index)}>
             
             <Eventspageevent
-              time={event.time}
               header={event.title.rendered}
               description={event.description}
               price={event.price.rendered}
+
               
             />
              {event.acf && event.acf.link && (
