@@ -325,17 +325,16 @@ body {
   right: 0;
   bottom: 0;
   opacity: 0;
-  backface-visibility: hidden; /* Hide the back side of the card */
-  transform: rotateY(180deg); /* Rotate the back side of the card out of view */
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
   transition: opacity 0.5s, transform 0.5s;
-  padding: 120px;
+  padding: 20px; /* Reduced from 120px */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #f9f9f9;
   border-radius: 8px;
-  padding-bottom:200px;
 }
 
 .griditem.flip .back {
