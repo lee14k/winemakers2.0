@@ -391,7 +391,18 @@ body {
 .griditem {
   background-image: url('/sampleeventbg.png')
 }
+.event-link-button {
+  position: relative;
+  z-index: 20;
+}
 
+.griditem .back {
+  z-index: 10;
+}
+
+.griditem.flip .back {
+  z-index: 20;
+}
 @media (min-width: 768px) {
   .sidebar {
     display: block; /* Adjust as needed */
